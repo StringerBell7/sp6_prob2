@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>SP6 - Opgave 1</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html">SP6 - Opgave 1</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">All Cars</a></li>
+                        <li><a href="#/add">Add Car</a></li> 
+                    </ul>
+                </div>
+            </nav>
+            
+            <div ng-view></div>
+            
+        </div>
+    <script src="js/app.js" type="text/javascript"></script>
+    </body>
+</html>

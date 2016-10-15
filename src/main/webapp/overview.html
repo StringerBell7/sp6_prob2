@@ -1,0 +1,39 @@
+<div ng-controller="CarController as carCtrl">
+    <div class="md-col-6 pull-left">
+        <h4>Number of cars: {{carCtrl.cars.length }}</h4>
+    </div>
+    <div class="md-col-6 pull-right">
+        <input type="text" class="search form-control" ng-model="carfilter" placeholder="Search..">
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th><a href ng-click="order = 'id'; reverse=!reverse">ID</a></th>
+                <th><a href ng-click="order = 'year'; reverse=!reverse">Year</a></th>
+                <th><a href ng-click="order = 'registered'; reverse=!reverse">Registered</a></th>
+                <th><a href ng-click="order = 'make'; reverse=!reverse">Make</a></th>
+                <th><a href ng-click="order = 'model'; reverse=!reverse">Model</a></th>
+                <th><a href ng-click="order = 'description'; reverse=!reverse">Description</a></th>
+                <th><a href ng-click="order = 'price'; reverse=!reverse">Price</a></th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="car in carCtrl.cars | filter: carfilter | orderBy:order:reverse">
+                <td>{{car.id}}</td>
+                <td>{{car.year }}</td>
+                <td>{{car.registered | date }}</td>
+                <td>{{car.make}}</td>
+                <td>{{car.model}}</td>
+                <td>{{car.description}}</td>
+                <td>{{car.price | currency}}</td>
+                <td>
+                    <a href="#/edit/{{car.id}}"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href ng-click="carCtrl.deleteCar(car.id)" class="text-danger"><span class="glyphicon glyphicon-remove"></span></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
